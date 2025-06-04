@@ -1,0 +1,15 @@
+stages:
+  - instalar
+  - testar
+
+instalar_dependencias:
+  stage: instalar
+  image: node:18
+  script:
+    - npm install
+
+rodar_testes:
+  stage: testar
+  image: node:18
+  script:
+    - npm test
