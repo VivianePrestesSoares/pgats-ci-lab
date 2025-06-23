@@ -32,7 +32,7 @@ jobs:
     #maquina que o job vai executar
     runs-on: ubuntu-latest 
 
-     steps: 
+    steps: 
     #baixar o projeto, fazer o clone do repositorio para a máquina
       - uses: actions/checkout@v4
     #instalar o yarn 
