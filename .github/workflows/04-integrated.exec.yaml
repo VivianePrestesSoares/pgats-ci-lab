@@ -6,19 +6,19 @@ name: 'Execução Integrada'
 #regras de disparo (gatilhos/triggers)
 #podem ser a partir de um horario,mas iremos usar o trigger workflow_dispatch (execução manual)
 
-on: 
+on:
   workflow_dispatch:
 
 #trabalhos/tarefas dentro do pipeline = jobs
 jobs:
   inspecao:
     #maquina que o job vai executar
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
 
-    steps: 
+    steps:
       #baixar o projeto, fazer o clone do repositorio para a máquina
       - uses: actions/checkout@v4
-      #instalar o yarn 
+      #instalar o yarn
       - name: Instalando Yarn
         run: npm install -g yarn
       #instalar as dependencias
@@ -26,33 +26,33 @@ jobs:
         run: yarn
       #checar a padronização do código
       - name: Checando padronização do código
-        run: yarn lint        
+        run: yarn lint
 
   unidade:
     #maquina que o job vai executar
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
 
-    steps: 
+    steps:
       #baixar o projeto, fazer o clone do repositorio para a máquina
       - uses: actions/checkout@v4
-      #instalar o yarn 
+      #instalar o yarn
       - name: Instalando Yarn
         run: npm install -g yarn
       #instalar as dependencias
       - name: Instalando dependências
         run: yarn
       #checar a padronização do código
-      - name: Executando testes de unidade 
+      - name: Executando testes de unidade
         run: yarn test
 
   e2e-testes:
     #maquina que o job vai executar
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
 
     steps:
       # clone do projeto
       - uses: actions/checkout@v4
-       
+
       # instalação do node
       - uses: actions/setup-node@v4
         with:
@@ -83,7 +83,7 @@ jobs:
 
   deploy:
     #maquina que o job vai executar
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
 
     steps:
       # simulação do deploy
