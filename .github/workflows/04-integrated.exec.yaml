@@ -49,7 +49,7 @@ jobs:
     #maquina que o job vai executar
     runs-on: ubuntu-latest 
 
-      steps:
+    steps:
       # clone do projeto
       - uses: actions/checkout@v4
        
