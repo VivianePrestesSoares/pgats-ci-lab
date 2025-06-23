@@ -16,15 +16,15 @@ jobs:
     runs-on: ubuntu-latest 
 
     steps: 
-    #baixar o projeto, fazer o clone do repositorio para a máquina
+      #baixar o projeto, fazer o clone do repositorio para a máquina
       - uses: actions/checkout@v4
-    #instalar o yarn 
+      #instalar o yarn 
       - name: Instalando Yarn
         run: npm install -g yarn
-    #instalar as dependencias
+      #instalar as dependencias
       - name: Instalando dependências
         run: yarn
-    #checar a padronização do código
+      #checar a padronização do código
       - name: Checando padronização do código
         run: yarn lint        
 
@@ -33,15 +33,15 @@ jobs:
     runs-on: ubuntu-latest 
 
     steps: 
-    #baixar o projeto, fazer o clone do repositorio para a máquina
+      #baixar o projeto, fazer o clone do repositorio para a máquina
       - uses: actions/checkout@v4
-    #instalar o yarn 
+      #instalar o yarn 
       - name: Instalando Yarn
         run: npm install -g yarn
-    #instalar as dependencias
+      #instalar as dependencias
       - name: Instalando dependências
         run: yarn
-    #checar a padronização do código
+      #checar a padronização do código
       - name: Executando testes de unidade 
         run: yarn test
 
@@ -81,12 +81,11 @@ jobs:
           name: relatorio
           path: ./playwright-report
 
-      
   deploy:
     #maquina que o job vai executar
     runs-on: ubuntu-latest 
 
-     steps:
+    steps:
       # simulação do deploy
       - name: Simulação do Deploy
         run: echo "simulando o deploy com sucesso"
